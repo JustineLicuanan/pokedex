@@ -18,6 +18,7 @@ const PokemonItem = ({ pokemon }: Props) => {
 				<a className='flex'>
 					<Image
 						src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`}
+						alt={pokemon.name}
 						width={96}
 						height={96}
 					/>

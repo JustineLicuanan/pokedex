@@ -6,14 +6,22 @@
 	box-sizing: border-box;
 }
 
+html {
+	height: 100%;
+}
+
 body {
+	position: relative;
+	min-height: 100%;
 	font-family: $fontFamily;
 	color: $darkColor;
 	line-height: 1.6;
+	padding: 0 0 $footerHeight;
 }
 
 h1,
-h2 {
+h2,
+h3 {
 	font-weight: 300;
 	line-height: 1.2;
 	margin: 10px 0;
@@ -26,4 +34,8 @@ ul {
 a {
 	text-decoration: none;
 	color: $darkColor;
+}
+
+p {
+	margin: 10px 0;
 }

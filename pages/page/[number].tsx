@@ -1,10 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { PagePaths, Pokemon } from '../../types';
 import Seo from '../../components/Seo';
-import Header from '../../components/Header';
 import PokemonList from '../../components/PokemonList';
 import NavigationBtns from '../../components/NavigationBtns';
-import Footer from '../../components/Footer';
 
 interface Props {
 	pokemons: Pokemon[];
@@ -18,13 +16,12 @@ const Home = ({ pokemons, pageNumber, maxPageCount }: Props) => {
 			<Seo
 				title='Home'
 				description='a pokedex that lets you find, and search for pokemons with their stats'
-				route='/'
+				route={`/page/${pageNumber}`}
 			/>
 
-			<Header logo='Pokédex' />
+			<NavigationBtns pageNumber={pageNumber} maxPageCount={maxPageCount} />
 			<PokemonList pokemons={pokemons} />
 			<NavigationBtns pageNumber={pageNumber} maxPageCount={maxPageCount} />
-			<Footer />
 		</>
 	);
 };

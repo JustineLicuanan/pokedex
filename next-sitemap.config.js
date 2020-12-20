@@ -1,4 +1,4 @@
-const NEXT_PUBLIC_HOST = 'http://127.0.0.1:3000';
+const NEXT_PUBLIC_HOST = 'https://justpokedex.now.sh';
 
 module.exports = {
 	siteUrl: NEXT_PUBLIC_HOST,

@@ -27,6 +27,7 @@
 
 	&__itemName {
 		text-transform: capitalize;
+		margin-top: 5px;
 	}
 }
 
@@ -45,10 +46,67 @@
 	}
 }
 
+.pokemonInfo {
+	margin: 10px 0;
+
+	&__profile {
+		margin: 10px;
+
+		&.flex {
+			flex-direction: column;
+		}
+	}
+
+	&__name {
+		text-transform: capitalize;
+		margin: 5px 0;
+	}
+
+	&__types {
+		text-transform: capitalize;
+		margin-top: 0;
+	}
+
+	&__stats {
+		text-align: center;
+		margin: 10px;
+	}
+
+	&__statLabel {
+		text-transform: uppercase;
+		margin-bottom: 5px;
+	}
+
+	&__statsItem {
+		&.flex {
+			justify-content: space-between;
+		}
+
+		text-transform: capitalize;
+	}
+
+	&__statsItemName,
+	&__statsItemValue {
+		margin: 0;
+	}
+
+	&__statsItemName {
+		margin-right: 20px;
+	}
+}
+
+.goBack {
+	margin: 40px 0 10px;
+}
+
 .footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	background-color: $primaryColor;
 	color: $primaryTextColor;
-	height: 60px;
+	height: $footerHeight;
 
 	&__authorLink {
 		color: $secondaryColor;

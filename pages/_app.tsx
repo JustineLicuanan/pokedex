@@ -3,12 +3,16 @@ import type { AppProps } from 'next/app';
 
 import SEO from '../next-seo.config';
 import '../scss/style.scss';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 	return (
 		<>
 			<DefaultSeo {...SEO} />
+			<Header logo='Pokédex' />
 			<Component {...pageProps} />
+			<Footer />
 		</>
 	);
 };
