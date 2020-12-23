@@ -17,6 +17,12 @@ const Home = ({ pokemons, pageNumber, maxPageCount }: Props) => {
 				title={`Page ${pageNumber}`}
 				description={`this is the page ${pageNumber} of pokedex that lets you find, and search for pokemons with their stats.`}
 				route={`/page/${pageNumber}`}
+				images={[
+					{
+						url: '/images/justpokedex-logo.png',
+						alt: 'JustPokedex Logo',
+					},
+				]}
 			/>
 
 			<NavigationBtns pageNumber={pageNumber} maxPageCount={maxPageCount} />
