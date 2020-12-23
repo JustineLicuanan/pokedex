@@ -10,7 +10,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 	return (
 		<>
 			<DefaultSeo {...SEO} />
-			<Header logo='Pokédex' />
+			<Header logo='JustPokédex' />
 			<Component {...pageProps} />
 			<Footer />
 		</>
