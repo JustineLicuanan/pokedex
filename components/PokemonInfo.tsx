@@ -20,6 +20,7 @@ const PokemonInfo = ({ pokemon }: Props) => {
 						alt={pokemon.name}
 						width={96}
 						height={96}
+						key={pokemon.id}
 					/>
 					<h2 className='pokemonInfo__name'>{`#${pokemon.id} | ${pokemonName}`}</h2>
 					<h3 className='pokemonInfo__types'>

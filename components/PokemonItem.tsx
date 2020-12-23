@@ -21,6 +21,7 @@ const PokemonItem = ({ pokemon }: Props) => {
 						alt={pokemon.name}
 						width={96}
 						height={96}
+						key={pokemonId}
 					/>
 					<h2 className='pokemonList__itemName'>{pokemonName}</h2>
 				</a>
