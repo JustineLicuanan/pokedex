@@ -16,7 +16,7 @@ const NavigationBtns = ({ pageNumber, maxPageCount }: Props) => {
 						pageNum === 1 ? ' navBtns__previous--hidden' : ''
 					}`}
 				>
-					<Link href={`/page/${pageNum - 1}`}>
+					<Link href={pageNum === 2 ? '/' : `/page/${pageNum - 1}`}>
 						<a className='btn'>Previous</a>
 					</Link>
 				</li>

@@ -8,7 +8,7 @@ const GoBackBtn = ({ pageNumber }: Props) => {
 	return (
 		<div className='goBack'>
 			<div className='container flex'>
-				<Link href={`/page/${pageNumber}`}>
+				<Link href={pageNumber === 1 ? '/' : `/page/${pageNumber}`}>
 					<a className='btn'>← Go Back</a>
 				</Link>
 			</div>

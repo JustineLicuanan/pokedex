@@ -14,12 +14,8 @@ const Home = ({ pokemons, pageNumber, maxPageCount }: Props) => {
 	return (
 		<>
 			<Seo
-				title={pageNumber === '1' ? 'Home' : `Page ${pageNumber}`}
-				description={
-					pageNumber === '1'
-						? 'a pokedex that lets you find, and search for pokemons with their stats.'
-						: `this is the page ${pageNumber} of pokedex that lets you find, and search for pokemons with their stats.`
-				}
+				title={`Page ${pageNumber}`}
+				description={`this is the page ${pageNumber} of pokedex that lets you find, and search for pokemons with their stats.`}
 				route={`/page/${pageNumber}`}
 			/>
 
@@ -36,7 +32,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	const pageCount = Math.ceil(count / 30);
 	const paths: PagePaths[] = [];
 
-	for (let i = 0; pageCount > i; i++) {
+	for (let i = 1; pageCount > i; i++) {
 		paths.push({ params: { number: (i + 1).toString() } });
 	}
 
@@ -47,18 +43,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-	const pageNumber = ((parseInt(params?.number as string) - 1) * 30).toString();
+	const offset = ((parseInt(params?.number as string) - 1) * 30).toString();
 	const res = await fetch(
-		`https://pokeapi.co/api/v2/pokemon?limit=30&offset=${pageNumber}`
+		`https://pokeapi.co/api/v2/pokemon?limit=30&offset=${offset}`
 	);
 	const { count, results } = await res.json();
-	const maxPageCount = Math.ceil(count / 30);
 
 	return {
 		props: {
 			pokemons: results,
 			pageNumber: params?.number,
-			maxPageCount,
+			maxPageCount: Math.ceil(count / 30),
 		},
 	};
 };

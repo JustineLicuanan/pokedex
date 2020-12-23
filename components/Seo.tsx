@@ -21,7 +21,7 @@ const Seo = ({ title, description, route, images }: Props) => {
 				canonical={`${NEXT_PUBLIC_HOST}${route}`}
 				openGraph={{
 					url: `${NEXT_PUBLIC_HOST}${route}`,
-					title,
+					title: `${title} | ${NEXT_PUBLIC_SITE_NAME}`,
 					description,
 					images,
 				}}
