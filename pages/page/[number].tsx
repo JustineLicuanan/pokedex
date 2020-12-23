@@ -14,8 +14,12 @@ const Home = ({ pokemons, pageNumber, maxPageCount }: Props) => {
 	return (
 		<>
 			<Seo
-				title='Home'
-				description='a pokedex that lets you find, and search for pokemons with their stats'
+				title={pageNumber === '1' ? 'Home' : `Page ${pageNumber}`}
+				description={
+					pageNumber === '1'
+						? 'a pokedex that lets you find, and search for pokemons with their stats.'
+						: `this is the page ${pageNumber} of pokedex that lets you find, and search for pokemons with their stats.`
+				}
 				route={`/page/${pageNumber}`}
 			/>
 

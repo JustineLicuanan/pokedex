@@ -16,12 +16,13 @@ const PokemonPage = ({ pokemon }: Props) => {
 		? capitalizeString(pokemon.name.split('-').join(' '))
 		: capitalizeString(pokemon.name);
 	const pokemonTypes = pokemon.types.map(({ type }) => type.name).join('/');
+	const pageNumber = Math.ceil(pokemon.id / 30);
 
 	return (
 		<>
 			<Seo
 				title={pokemonName}
-				description={`${pokemonName} is a pokemon that is ${pokemonTypes} type, and the number ${pokemon.id} in the pokedex.`}
+				description={`${pokemonName} is a ${pokemonTypes} type pokemon, and the number ${pokemon.id} pokemon in the pokedex.`}
 				route={`/pokemon/${pokemon.name}`}
 				images={[
 					{
@@ -31,7 +32,7 @@ const PokemonPage = ({ pokemon }: Props) => {
 				]}
 			/>
 			<PokemonInfo pokemon={pokemon} />
-			<GoBackBtn />
+			<GoBackBtn pageNumber={pageNumber} />
 		</>
 	);
 };

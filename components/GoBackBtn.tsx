@@ -1,10 +1,14 @@
 import Link from 'next/link';
 
-const GoBackBtn = () => {
+interface Props {
+	pageNumber: number;
+}
+
+const GoBackBtn = ({ pageNumber }: Props) => {
 	return (
 		<div className='goBack'>
 			<div className='container flex'>
-				<Link href='/'>
+				<Link href={`/page/${pageNumber}`}>
 					<a className='btn'>← Go Back</a>
 				</Link>
 			</div>
